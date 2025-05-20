@@ -3467,8 +3467,9 @@ class Agent:
                 return None
 
         # Use knowledge base search
+        #If use LangChainKnowledgeBase, then we no need to check if the vector_db is None because we have LangChainKnowledgeBase's retriever
         try:
-            if self.knowledge is None or self.knowledge.vector_db is None:
+            if (self.knowledge is None or (self.knowledge.vector_db is None and getattr(self.knowledge, "retriever", None) is None)):
                 return None
 
             if num_documents is None:
@@ -3530,8 +3531,9 @@ class Agent:
                 return None
 
         # Use knowledge base search
+        #If use LangChainKnowledgeBase, then we no need to check if the vector_db is None because we have LangChainKnowledgeBase's retriever
         try:
-            if self.knowledge is None or self.knowledge.vector_db is None:
+            if (self.knowledge is None or (self.knowledge.vector_db is None and getattr(self.knowledge, "retriever", None) is None)):
                 return None
 
             if num_documents is None:
