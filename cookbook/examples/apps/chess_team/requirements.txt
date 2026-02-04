@@ -5,3 +5,4 @@ openai>=1.60.1
 pydantic>=2.10.6
 typing-extensions>=4.12.2
 python-dotenv>=1.0.0
+python-multipart>=0.0.22 # not directly required, pinned by Snyk to avoid a vulnerability
